@@ -259,4 +259,5 @@ For running this project on Heroku, just push the master branch to your heroku a
 The current next steps are planned:
 
 * Move command mapping into module context
+* Move connectors to own repositories and link them via composer
 * Add connection to Evernote for creating ToDo lists
