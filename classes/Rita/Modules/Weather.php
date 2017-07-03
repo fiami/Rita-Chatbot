@@ -75,7 +75,7 @@ class Weather extends Module {
 	protected function getSlackAttachmentForWeatherObject( $date ) {
 		return new Attachment(
 			"Weather for " . $date[OpenWeatherMap::FIELD_CITY] . " at " . $date[OpenWeatherMap::FIELD_DATE],
-			ucfirst($date[OpenWeatherMap::FIELD_DESCRIPTION]) . " at a temperature of " . $date[OpenWeatherMap::FIELD_TEMPERATURE] . " °C.\n" .
+			"*" . ucfirst($date[OpenWeatherMap::FIELD_DESCRIPTION]) . "* at a temperature of *" . $date[OpenWeatherMap::FIELD_TEMPERATURE] . "* *°C*.\n" .
 				"Humidity: " . $date[OpenWeatherMap::FIELD_HUMIDITY] . "% / Pressure: " . $date[OpenWeatherMap::FIELD_PRESSURE]. " hpa",
 			"",
 			"",

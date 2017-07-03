@@ -31,7 +31,7 @@ class OpenWeatherMap {
 		return $this->createWeatherDataObject(
 			(new \DateTime())->format('Y-m-d H:i'),
 			$data->name,
-			$data->main->temp,
+			round(floatval($data->main->temp)),
 			$data->main->pressure,
 			$data->main->humidity,
 			$data->weather[0]->description,
@@ -51,7 +51,7 @@ class OpenWeatherMap {
 			$hours[] = $this->createWeatherDataObject(
 				(new \DateTime( "@" . $datapoint->dt ))->format('H:i'),
 				$data->city->name,
-				$datapoint->main->temp,
+				round(floatval($datapoint->main->temp)),
 				$datapoint->main->pressure,
 				$datapoint->main->humidity,
 				$datapoint->weather[0]->description,
@@ -74,7 +74,7 @@ class OpenWeatherMap {
 			$days[] = $this->createWeatherDataObject(
 				(new \DateTime( "@" . $datapoint->dt ))->format('l, Y-m-d'),
 				$data->city->name,
-				$datapoint->temp->min . " - " . $datapoint->temp->max,
+				round(floatval($datapoint->temp->min)) . "-" . round(floatval($datapoint->temp->max)),
 				$datapoint->pressure,
 				$datapoint->humidity,
 				$datapoint->weather[0]->description,
