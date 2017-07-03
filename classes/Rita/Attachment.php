@@ -13,6 +13,7 @@ class Attachment {
 		$this->data["color"] = $color;
 		$this->data["image_url"] = $imageUrl;
 		$this->data["thumb_url"] = $thumbUrl;
+		$this->data["mrkdwn_in"] = array("text");
 	}
 
 	public function getData() {
